@@ -1,0 +1,27 @@
+<div class="">
+    <h1 class="text-xl title">Decouvrez l'univers de Star Wars avec Hospi Media</h1>
+    <span>Tous les personnages par films</span>
+    <div class="py-8">
+        <% @all_films.each do |film| %>
+            <div data-controller="toggle" class="rounded-xl bg-white shadow-xl flex flex-col border px-2 py-1 max-w-sm cursor-pointer">
+                <span class="text-2xl pb-2"><%= film[:title] %> (n°<%= film[:episode_id] %>)</span>
+                <% @data.each do |perso| %>
+                    <div data-action="click->toggle#toggle"  >
+                        <div class="px-2 py-1 text-white bg-black rounded-xl border flex flex-col gap-y-1">
+                            <span>Nom: <%= perso[:name] %></span>
+                            <span>Poids: <%= perso[:mass] %></span>
+                            <span>Planète: <%= perso[:planet] %></span>     
+                        </div>    
+                    </div>      
+                <% end %>
+                <div class="hidden" data-target="toggle.element">
+                    <span>D'autres petites informations en plus ? </span>
+                    <div class="flex flex-col">
+                        <span><%= film[:opening] %></span>
+                        <span><%= film[:release] %></span>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

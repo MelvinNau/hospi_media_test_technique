@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Starjedi';
+  src: url('Starjedi.ttf');
+}
+
+
+.title {
+  font-family: 'Starjedi';
+}
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+
+
+*/
